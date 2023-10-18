@@ -1,0 +1,39 @@
+---
+const socialData = {
+	platform: "github",
+	username: "domingouribe",
+};
+
+import Social from "./Social.astro";
+---
+
+<footer class="footer">
+	<p class="footer__description">
+		Look more about my projetcs on <a
+			href={`https://www.${socialData.platform}.com/${socialData.username}`}
+			target="_blank">{socialData.platform}</a
+		>
+		<Social platform="twitter" username="mapasdebits" />
+		<Social platform="linkedin" username="domingouribe" />
+		<Social platform="instagram" username="mapasdebits" />
+	</p>
+</footer>
+
+<style lang="scss">
+	.footer {
+		background-color: blueviolet;
+		padding: 1em;
+		color: white;
+		display: flex;
+		gap: 1em;
+		flex-flow: row wrap;
+
+		&__link {
+			color: white;
+		}
+	}
+</style>
+
+<script>
+	import "../scripts/menu";
+</script>

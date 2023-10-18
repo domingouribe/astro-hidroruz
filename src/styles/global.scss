@@ -1,0 +1,39 @@
+//Custom properties
+:root {
+	--mainTypo: "Ubuntu", sans-serif;
+	--textColor: "whitesmoke";
+
+	--blue-dark: hsl(235, 81%, 14%);
+	--blue-soft: hsl(235, 48%, 40%);
+	--blue-light: hsl(235, 100%, 67%);
+
+	--container-sm: 768px;
+	-container-md: 1024px;
+	-container-lg: 1200px;
+}
+
+html {
+	box-sizing: border-box;
+	background-color: var(--blue-dark);
+	color: var(--textColor);
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	line-height: 1.5;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	margin: 1rem 0;
+	font-size: 1.5rem;
+}

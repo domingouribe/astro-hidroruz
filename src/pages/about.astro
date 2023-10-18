@@ -1,0 +1,82 @@
+---
+const pageTitle = "About me";
+const identity = {
+	name: "Domingo Uribe",
+	city: "Coquimbo",
+	country: "Chile",
+	ocupation: "Web developer",
+	hobbies: ["draw", "sing", "craft", "learn", "read"],
+};
+const skills = [
+	"HTML",
+	"CSS",
+	"BEM",
+	"Astro",
+	"WordPress",
+	"JavaScript",
+	"Angular",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "greenyellow";
+const fontWeight = "bold";
+const textTransform = "uppercase";
+
+import "../styles/global.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<Header />
+
+		<h1>{pageTitle}</h1>
+
+		<p>
+			Hello! My name is {identity.name}. I am a {identity.ocupation} based
+			in {identity.city}, {identity.country}
+		</p>
+		<p>
+			Some of my hobbies are: {identity.hobbies[0]} and {
+				identity.hobbies[3]
+			}
+		</p>
+		<p>And these are some of my skills:</p>
+		<ul>
+			{skills.map((skill) => <li class="skill"> {skill} </li>)}
+		</ul>
+
+		{happy && <p>I am really happy to be learn Astro</p>}
+
+		{finished && <p>I finished to learn all about Astro</p>}
+
+		{
+			goal === 3 ? (
+				<p>My goal is to finished in 3 days</p>
+			) : (
+				<p>My goal is not 3 days</p>
+			)
+		}
+
+		<Footer />
+	</body>
+</html>
+
+<style define:vars={{ skillColor, fontWeight, textTransform }}>
+	.skill {
+		color: peru;
+		color: var(--skillColor);
+		font-weight: var(--fontWeight);
+		text-transform: var(--textTransform);
+	}
+</style>
