@@ -1,0 +1,22 @@
+---
+// const pageTitle = "About me"; This come from any page template, but change by generical props:
+const {pageTitle} = Astro.props;
+
+import "../styles/global.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<Header />
+        <slot />
+		<Footer />
+	</body>
+</html>
